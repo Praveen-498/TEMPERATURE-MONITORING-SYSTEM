@@ -1,27 +1,17 @@
-String input; 
+const int sensorPin = A0;
+
 void setup() {
-pinMode(7, OUTPUT);  
-Serial.begin(9600);
-} 
-void loop() {
-  while (Serial.available())
-  { 
-  delay(10); 
-  char c = Serial.read(); 
-  input += c; 
-  }  
-  if (input.length() > 0)
-  {
-    Serial.println(input); 
-       if(input == "on")
-       {
-         digitalWrite(7, HIGH);
-        }  
-  if(input == "off")
-  {
-   digitalWrite(7, LOW);
-    } 
-input="";
-}
+  Serial.begin(9600);
 }
 
+void loop() {
+  int analogValue = analogRead(sensorPin);
+  float voltage = analogValue * (5.0 / 1023.0);
+  float temperatureC = voltage * 100.0;
+
+  Serial.print("Temperature: ");
+  Serial.print(temperatureC);
+  Serial.println(" C");
+
+  delay(1000);
+}
