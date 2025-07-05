@@ -1,7 +1,5 @@
 # TASK-3 TEMPERATURE-MONITORING-SYSTEM
 
-# DESCRIPTION :
-
  # What is it?
 A Temperature Monitoring System is a project that measures the temperature around a sensor and shows it on a display or Serial Monitor. It helps you track temperature in real time, which is useful in homes, labs, greenhouses, fridges, etc.
 
